@@ -1,9 +1,29 @@
+let head = document.querySelector(".head")
 let container = document.querySelector(".container")
+let btn = document.createElement("button")
+btn.innerText = "New Grid"
+head.appendChild(btn)
 
-for(let i = 0; i < 16; i++) {
-    for(let j =0; j < 16; j++) {
-    const square = document.createElement("div")
-    square.classList.add("square")
-    container.appendChild(square)
+btn.addEventListener("click", function() {
+    let numSquares = prompt("Enter number of squares per side: ", "1-100")
+    container.innerHTML = ""
+    let dimension = 600 / numSquares
+    for(let i = 0; i < numSquares; i++) {
+        for(let j =0; j < numSquares; j++) {
+        const square = document.createElement("div")
+        square.classList.add("square")
+        square.style.height = `${dimension}px`
+        square.style.width = `${dimension}px`
+        square.addEventListener("mouseover", function(e) {
+            this.classList.add("squareColor")
+        })
+        container.appendChild(square)
+        }
     }
-}
+    console.log(dimension)
+})
+
+
+
+// for dynamic grid layout, get user dimension and set
+// flex-basis for squares as % based on overall width
