@@ -1,11 +1,11 @@
 let head = document.querySelector(".head")
 let container = document.querySelector(".container")
 let btn = document.createElement("button")
-btn.innerText = "New Grid"
+btn.innerText = "Start/Reset"
 head.appendChild(btn)
 
 btn.addEventListener("click", function() {
-    let numSquares = prompt("Enter number of squares per side: ", "1-100")
+    let numSquares = prompt("How many squares per side?", "1-100")
     container.innerHTML = ""
     let dimension = 600 / numSquares
     for(let i = 0; i < numSquares; i++) {
