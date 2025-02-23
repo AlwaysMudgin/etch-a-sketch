@@ -20,10 +20,4 @@ btn.addEventListener("click", function() {
         container.appendChild(square)
         }
     }
-    console.log(dimension)
 })
-
-
-
-// for dynamic grid layout, get user dimension and set
-// flex-basis for squares as % based on overall width
